@@ -31,10 +31,7 @@
     "watch": "npm run style-build && concurrently \"npm run assets-watch\" \"npm run html-watch\" \"npm run budo\" \"npm run style-watch\"",
     "watch-https": "npm run style-build && concurrently \"npm run assets-watch\" \"npm run html-watch\" \"npm run budo-https\" \"npm run style-watch\""
   },
-  "pre-commit": [
-    "eslint",
-    "stylint"
-  ],
+
   "dependencies": {
     "@tensorflow/tfjs": "0.11.7",
     "@tensorflow-models/mobilenet": "0.1.1",
