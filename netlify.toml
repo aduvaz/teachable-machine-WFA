@@ -1,0 +1,28 @@
+# Netlify configuration for teachable-machine-v1
+# https://github.com/googlecreativelab/teachable-machine-v1
+
+[build]
+  command = "npm install --ignore-scripts && npm run build"
+  publish = "public"
+
+[build.environment]
+  NODE_VERSION = "16"
+  NPM_FLAGS = "--legacy-peer-deps"
+
+# Required for TensorFlow.js SharedArrayBuffer support
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Embedder-Policy = "require-corp"
+
+# Cache static assets aggressively
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/bundle.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
