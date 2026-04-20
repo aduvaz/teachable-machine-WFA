@@ -2,12 +2,11 @@
 # https://github.com/googlecreativelab/teachable-machine-v1
 
 [build]
-  command = "npm install --ignore-scripts && npm run build"
+  command = "rm -f requirements.txt && yarn install --ignore-scripts && yarn build"
   publish = "public"
 
 [build.environment]
   NODE_VERSION = "16"
-  NPM_FLAGS = "--legacy-peer-deps"
 
 # Required for TensorFlow.js SharedArrayBuffer support
 [[headers]]
