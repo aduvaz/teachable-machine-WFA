@@ -7,6 +7,7 @@
 
 [build.environment]
   NODE_VERSION = "16"
+  YARN_VERSION = "1.22.19"
 
 # Required for TensorFlow.js SharedArrayBuffer support
 [[headers]]
