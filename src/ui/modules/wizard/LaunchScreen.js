@@ -82,8 +82,8 @@ class LaunchScreen {
         this.skipButton.addEventListener('click', this.skipClick.bind(this));
         this.skipButtonMobile.addEventListener('touchend', this.skipClick.bind(this));
         this.skipButtonMobile.addEventListener('click', this.skipClick.bind(this));
-        this.startButton.element.addEventListener('click', this.startClick.bind(this));
-        this.startButton.element.addEventListener('touchend', this.startClick.bind(this));
+        this.startButton.element.addEventListener('click', this.skipClick.bind(this));
+        this.startButton.element.addEventListener('touchend', this.skipClick.bind(this));
     }
 
     openFacebookPopup(event) {
