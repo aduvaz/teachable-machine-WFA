@@ -23,9 +23,12 @@ class LaunchScreen {
         this.messageIsCompatible = document.querySelector('#is-compatible');
         this.messageIsNotCompatible = document.querySelector('#is-not-compatible');
 
-        this.startButton.element.classList.add('button--disabled');
-        document.querySelector('.wizard__launch-skip-paragraph').style.display = 'none';
-        document.querySelector('.wizard__browser-warning').style.display = 'block';
+        // * CLAUDE *
+        // this.startButton.element.classList.add('button--disabled');
+        // document.querySelector('.wizard__launch-skip-paragraph').style.display = 'none';
+        // document.querySelector('.wizard__browser-warning').style.display = 'block';
+        document.querySelector('.wizard__browser-warning').style.display = 'none';
+
 
         let facebookButton = document.querySelector('.intro__share-link--facebook');
         let twitterButton = document.querySelector('.intro__share-link--twitter');
@@ -61,11 +64,16 @@ class LaunchScreen {
         facebookButton.addEventListener('click', this.openFacebookPopup.bind(this));
         twitterButton.addEventListener('click', this.openTwitterPopup.bind(this));
         
+        // * CLAUDE *
+        // if (GLOBALS.browserUtils.isCompatible === true && GLOBALS.browserUtils.isMobile === false) {
+        //     this.startButton.element.classList.remove('button--disabled');
+        //     document.querySelector('.wizard__launch-skip-paragraph').style.display = 'block';
+        //     document.querySelector('.wizard__browser-warning').style.display = 'none';
+        // }
         if (GLOBALS.browserUtils.isCompatible === true && GLOBALS.browserUtils.isMobile === false) {
-            this.startButton.element.classList.remove('button--disabled');
-            // document.querySelector('.wizard__launch-skip-paragraph').style.display = 'block';
-            document.querySelector('.wizard__browser-warning').style.display = 'none';
+        this.startButton.element.classList.remove('button--disabled');
         }
+
 
         if (GLOBALS.browserUtils.isMobile) {
             this.messageIsCompatible.style.display = 'block';
@@ -106,8 +114,9 @@ class LaunchScreen {
         event.preventDefault();
         let intro = document.querySelector('.intro');
         let offset = intro.offsetHeight;
-        GLOBALS.wizard.skip();
-        gtag('event', 'wizard_skip');        
+
+        try { GLOBALS.wizard.skip(); } catch(e) {}
+        try { gtag('event', 'wizard_skip'); } catch(e) {}
 
         if (GLOBALS.browserUtils.isMobile) {
             let msg = new SpeechSynthesisUtterance();
@@ -119,6 +128,7 @@ class LaunchScreen {
             let event = new CustomEvent('mobileLaunch');
             window.dispatchEvent(event);
         }
+
         TweenMax.to(intro, 0.5, {
             y: -offset,
             onComplete: () => {

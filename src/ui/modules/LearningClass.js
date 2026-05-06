@@ -41,7 +41,12 @@ class LearningClass {
 		this.color = options.color;
 		this.rgbaColor = options.rgbaColor;
 
-
+		// Map button labels based on class ID
+		this.buttonLabels = {
+			'green': 'Veilig!',
+			'purple': 'Gevaarlijk!',
+			'orange': 'Neutraal'
+		};
 
 		this.arrow = new HighlightArrow(3);
 		this.arrow.element.style.left = 100 + '%';
@@ -153,7 +158,7 @@ class LearningClass {
 
 	buttonDown() {
 		let that = this;
-		this.button.setText('Training');
+		this.button.setText('Trainen...');
 		this.section.startRecording(this.index);
 
 		this.buttonUpEvent = this.buttonUp.bind(this);
@@ -172,7 +177,7 @@ class LearningClass {
 	}
 
 	buttonUp() {
-		this.button.setText(`Train <br>${this.id}`);
+		this.button.setText(this.buttonLabels[this.id]);
 		this.section.stopRecording();
         clearTimeout(this.buttonClickTimeout);
 		this.button.up();

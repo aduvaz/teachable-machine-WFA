@@ -9,14 +9,18 @@
 }
 
 .machine {
-	position: relative
 	background: $color__background
-	padding-top: space(8)
-	padding-bottom: space(10)
+	position: relative
+	padding-top: space(15)
+	padding-bottom: space(25)
 	text-align: center
-
 	@extend .font__size--small
 	letter-spacing: 0.3px
+	background-image: url('../assets/achtergrond-drone.png')
+	background-size: 110%
+	background-repeat: no-repeat
+	background-position: center center
+	background-attachment: fixed
 }
 
 .machine__sections {
@@ -354,7 +358,8 @@
 
 .output_selector__option--selected {
 	color: $color__blue--primary
-	text-decoration: underline
+	//text-decoration: underline
+	display: none
 }
 
 .output_selector__option:hover {

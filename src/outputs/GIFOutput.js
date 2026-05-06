@@ -32,18 +32,18 @@ class GIFOutput {
 		}
 
 		this.defaultGifs.push({
-			still: 'https://media1.giphy.com/media/vFKqnCdLPNOKc/giphy-downsized_s.gif',
-			gif: 'https://media1.giphy.com/media/vFKqnCdLPNOKc/200w.gif'
+			still: '/assets/groenveiliggif.gif',
+			gif: '/assets/groenveiliggif.gif'
 		});
 
 		this.defaultGifs.push({
-			still: 'https://media3.giphy.com/media/14ivBLRRRmyQw0/giphy-downsized_s.gif',
-			gif: 'https://media3.giphy.com/media/14ivBLRRRmyQw0/200w.gif'
+			still: '/assets/gevaargif.gif',
+			gif: '/assets/gevaargif.gif'
 		});
 
 		this.defaultGifs.push({
-			still: 'https://media0.giphy.com/media/I3BLTIP5Gv6h2/giphy-downsized_s.gif',
-			gif: 'https://media0.giphy.com/media/I3BLTIP5Gv6h2/200w.gif'
+			still: '/assets/neutraalgif.gif',
+			gif: '/assets/neutraalgif.gif'
 		});
 
 		this.edit = document.createElement('div');
@@ -80,7 +80,7 @@ class GIFOutput {
 			button.imageWrapper = imageWrapper;
 			button.addEventListener('mouseenter', this.editThumbOver.bind(this));
 			button.addEventListener('mouseleave', this.editThumbOut.bind(this));
-			button.addEventListener('click', this.editThumbClick.bind(this));
+			// button.addEventListener('click', this.editThumbClick.bind(this));
 
 			this.borders.push(border);
 		}
