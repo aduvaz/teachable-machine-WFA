@@ -32,18 +32,18 @@ class GIFOutput {
 		}
 
 		this.defaultGifs.push({
-			still: '/assets/groenveiliggif.gif',
-			gif: '/assets/groenveiliggif.gif'
+			still: 'assets/groenveiliggif.gif',
+			gif: 'assets/groenveiliggif.gif'
 		});
 
 		this.defaultGifs.push({
-			still: '/assets/gevaargif.gif',
-			gif: '/assets/gevaargif.gif'
+			still: 'assets/gevaargif.gif',
+			gif: 'assets/gevaargif.gif'
 		});
 
 		this.defaultGifs.push({
-			still: '/assets/neutraalgif.gif',
-			gif: '/assets/neutraalgif.gif'
+			still: 'assets/neutraalgif.gif',
+			gif: 'assets/neutraalgif.gif'
 		});
 
 		this.edit = document.createElement('div');
