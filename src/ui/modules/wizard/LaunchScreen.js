@@ -63,7 +63,7 @@ class LaunchScreen {
         
         if (GLOBALS.browserUtils.isCompatible === true && GLOBALS.browserUtils.isMobile === false) {
             this.startButton.element.classList.remove('button--disabled');
-            document.querySelector('.wizard__launch-skip-paragraph').style.display = 'block';
+            // document.querySelector('.wizard__launch-skip-paragraph').style.display = 'block';
             document.querySelector('.wizard__browser-warning').style.display = 'none';
         }
 
